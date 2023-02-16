@@ -7,17 +7,17 @@ const Plan = () => {
       <p>You have the option of monthly or yearly billing.</p>
       <div className="plan-capsule">
         <div className="plan-div">
-          <img src="src\assets\images\icon-arcade.svg" alt="" />
+          <img id="img1" src="" alt="" />
           <div className="plan-title">Arcade</div>
           <div className="plan-price">$9/mo</div>
         </div>
         <div className="plan-div">
-          <img src="src\assets\images\icon-advanced.svg" alt="" />
+          <img id="img2" src="" alt="" />
           <div className="plan-title">Advanced</div>
           <div className="plan-price">$12/mo</div>
         </div>
         <div className="plan-div">
-          <img src="src\assets\images\icon-pro.svg" alt="" />
+          <img id="img3" src="" alt="" />
           <div className="plan-title">Pro</div>
           <div className="plan-price">$15/mo</div>
         </div>

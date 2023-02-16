@@ -177,11 +177,93 @@ input:focus {
 .billing-check {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: inherit;
   margin-right: 25px;
   margin-top: 25px;
   background-color: var(--magnolia);
+  padding-right: 120px;
+  padding-left: 120px;
+  border-radius: 10px;
 }
+#billing-checkbox {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  appearance: none;
+  width: 60px;
+  height: 30px;
+  background-color: var(--marine);
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  position: relative;
+}
+#billing-checkbox:checked {
+  background-color: var(--marine);
+}
+#billing-checkbox::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  background-color: var(--lightGray);
+  transition: 0.5s;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+#billing-checkbox:checked::before {
+  left: 60%;
+}
+#img1 {
+  background-repeat: no-repeat;
+  background-image: url(./assets/images/icon-arcade.svg);
 
-/* progress done today: added first page, working on second one, in the plan div section */
+  shape-rendering: crispEdges;
+}
+#img2 {
+  background-repeat: no-repeat;
+  background-image: url(./assets/images/icon-advanced.svg);
+
+  shape-rendering: crispEdges;
+}
+#img3 {
+  background-repeat: no-repeat;
+  background-image: url(./assets/images/icon-pro.svg);
+
+  shape-rendering: crispEdges;
+}
+.add-ons-selection {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 1rem;
+}
+.add-on-div {
+  width: 400px;
+  padding: 10px;
+  border: 1px solid var(--marine);
+  border-radius: 10px;
+  height: 4rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  cursor: pointer;
+}
+#plan-checkbox {
+  height: 20px;
+  width: 20px;
+  border: none;
+  cursor: pointer;
+}
+.add-on-title {
+  margin-bottom: 2px;
+  font-weight: 500;
+  color: var(--marine);
+}
+.add-on-description {
+  font-weight: 400;
+  color: var(--coolGray);
+}

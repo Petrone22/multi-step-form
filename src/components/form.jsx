@@ -15,7 +15,22 @@ const Form = () => {
   const [checked1, setChecked1] = useState(false);
   const [checked2, setChecked2] = useState(false);
   const [checked3, setChecked3] = useState(false);
+  var checkedPrice = 0;
 
+  function getAddonPrice() {
+    if (checked1) {
+      checkedPrice += 1;
+    }
+    if (checked2) {
+      checkedPrice += 2;
+    }
+
+    if (checked3) {
+      checkedPrice += 2;
+    }
+    console.log(checkedPrice);
+  }
+  getAddonPrice();
   // console.log(name, phone, email);
 
   // const pages = [
@@ -61,6 +76,7 @@ const Form = () => {
           checked1={checked1}
           checked2={checked2}
           checked3={checked3}
+          checkedPrice={checkedPrice}
         />
       );
     }

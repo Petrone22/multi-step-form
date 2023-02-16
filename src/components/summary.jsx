@@ -1,6 +1,19 @@
 import React from "react";
 
-const Summary = ({ plan, planPrice, checked1, checked2, checked3 }) => {
+const Summary = ({
+  plan,
+  planPrice,
+  checked1,
+  checked2,
+  checked3,
+  checkedPrice,
+}) => {
+  function addprices() {
+    let pprice = parseInt(planPrice);
+    let cprice = parseInt(checkedPrice);
+    let finalPrice = pprice + cprice;
+    return finalPrice;
+  }
   return (
     <div className="summary-div">
       <h1>Finishing up</h1>
@@ -31,7 +44,7 @@ const Summary = ({ plan, planPrice, checked1, checked2, checked3 }) => {
       </div>
       <div className="calculation">
         <span>Total (per month)</span>
-        +$12/mo
+        {addprices()}
       </div>
     </div>
   );

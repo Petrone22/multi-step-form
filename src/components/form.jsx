@@ -6,7 +6,13 @@ import Summary from "./summary";
 import SideBar from "./sideBar";
 import "../App.css";
 const Form = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [page, setPage] = useState(0);
+  const [plan, setPlan] = useState();
+  // console.log(name, phone, email);
+
   // const pages = [
   //   "Personal info",
   //   "Select your plan",
@@ -18,10 +24,16 @@ const Form = () => {
   };
   const pageDisplay = () => {
     if (page === 0) {
-      return <PersonalInfo />;
+      return (
+        <PersonalInfo
+          setEmail={setEmail}
+          setPhone={setPhone}
+          setName={setName}
+        />
+      );
     }
     if (page === 1) {
-      return <Plan />;
+      return <Plan setPlan={setPlan} plan={plan} />;
     }
     if (page === 2) {
       return <AddOns />;
@@ -52,6 +64,7 @@ const Form = () => {
               disabled={page === 3}
               onClick={() => {
                 setPage((currPage) => currPage + 1);
+                console.log(name, email, phone);
               }}
             >
               Next Step

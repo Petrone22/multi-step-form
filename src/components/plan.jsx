@@ -1,7 +1,6 @@
 import React from "react";
 
-const Plan = ({ plan, setPlan }) => {
-  console.log(plan);
+const Plan = ({ plan, setPlan, setPlanPrice }) => {
   return (
     <div className="plan-selection">
       <h1>Select your plan</h1>
@@ -9,8 +8,13 @@ const Plan = ({ plan, setPlan }) => {
       <div className="plan-capsule">
         <div
           className="plan-div"
+          style={{
+            backgroundColor:
+              plan === "Arcade" ? "hsl(217, 100%, 97%)" : "white",
+          }}
           onClick={() => {
-            setPlan(0);
+            setPlan("Arcade");
+            setPlanPrice("9");
           }}
         >
           <img id="img1" src="" alt="" />
@@ -19,8 +23,13 @@ const Plan = ({ plan, setPlan }) => {
         </div>
         <div
           className="plan-div"
+          style={{
+            backgroundColor:
+              plan === "Advanced" ? "hsl(217, 100%, 97%)" : "white",
+          }}
           onClick={() => {
-            setPlan(1);
+            setPlan("Advanced");
+            setPlanPrice("12");
           }}
         >
           <img id="img2" src="" alt="" />
@@ -29,8 +38,12 @@ const Plan = ({ plan, setPlan }) => {
         </div>
         <div
           className="plan-div"
+          style={{
+            backgroundColor: plan === "Pro" ? "hsl(217, 100%, 97%)" : "white",
+          }}
           onClick={() => {
-            setPlan(2);
+            setPlan("Pro");
+            setPlanPrice("15");
           }}
         >
           <img id="img3" src="" alt="" />

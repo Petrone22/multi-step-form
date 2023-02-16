@@ -9,8 +9,13 @@ const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [plan, setPlan] = useState("");
+  const [planPrice, setPlanPrice] = useState();
   const [page, setPage] = useState(0);
-  const [plan, setPlan] = useState();
+  const [checked1, setChecked1] = useState(false);
+  const [checked2, setChecked2] = useState(false);
+  const [checked3, setChecked3] = useState(false);
+
   // console.log(name, phone, email);
 
   // const pages = [
@@ -19,6 +24,7 @@ const Form = () => {
   //   "Pick add-ons",
   //   "Finishing up",
   // ];
+
   const barDisplay = () => {
     return <SideBar page={page} />;
   };
@@ -33,13 +39,30 @@ const Form = () => {
       );
     }
     if (page === 1) {
-      return <Plan setPlan={setPlan} plan={plan} />;
+      return <Plan setPlan={setPlan} plan={plan} setPlanPrice={setPlanPrice} />;
     }
     if (page === 2) {
-      return <AddOns />;
+      return (
+        <AddOns
+          checked1={checked1}
+          checked2={checked2}
+          checked3={checked3}
+          setChecked1={setChecked1}
+          setChecked2={setChecked2}
+          setChecked3={setChecked3}
+        />
+      );
     }
     if (page === 3) {
-      return <Summary />;
+      return (
+        <Summary
+          planPrice={planPrice}
+          plan={plan}
+          checked1={checked1}
+          checked2={checked2}
+          checked3={checked3}
+        />
+      );
     }
   };
   return (
@@ -64,7 +87,6 @@ const Form = () => {
               disabled={page === 3}
               onClick={() => {
                 setPage((currPage) => currPage + 1);
-                console.log(name, email, phone);
               }}
             >
               Next Step

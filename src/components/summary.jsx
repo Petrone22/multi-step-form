@@ -43,8 +43,7 @@ const Summary = ({
         </div>
       </div>
       <div className="calculation">
-        <span>Total (per month)</span>
-        {addprices()}
+        <span>Total (per month)</span>+{addprices()}/mo
       </div>
     </div>
   );

@@ -28,7 +28,6 @@ const Form = () => {
     if (checked3) {
       checkedPrice += 2;
     }
-    console.log(checkedPrice);
   }
   getAddonPrice();
   // console.log(name, phone, email);
@@ -50,6 +49,9 @@ const Form = () => {
           setEmail={setEmail}
           setPhone={setPhone}
           setName={setName}
+          name={name}
+          email={email}
+          phone={phone}
         />
       );
     }
@@ -100,9 +102,17 @@ const Form = () => {
             </button>
             <button
               id="nextbtn"
-              disabled={page === 3}
+              disabled={
+                page === 3 || name === "" || email === "" || phone === ""
+              }
               onClick={() => {
                 setPage((currPage) => currPage + 1);
+              }}
+              style={{
+                backgroundColor:
+                  page === 3 || name === "" || email === "" || phone === ""
+                    ? "hsl(231, 11%, 63%)"
+                    : "hsl(243, 100%, 62%)",
               }}
             >
               Next Step

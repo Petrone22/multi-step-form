@@ -103,7 +103,11 @@ const Form = () => {
             <button
               id="nextbtn"
               disabled={
-                page === 3 || name === "" || email === "" || phone === ""
+                page === 3 ||
+                name === "" ||
+                email === "" ||
+                phone === "" ||
+                (page === 1 && plan === "")
               }
               onClick={() => {
                 setPage((currPage) => currPage + 1);

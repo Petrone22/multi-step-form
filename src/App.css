@@ -104,6 +104,9 @@ body {
   border-radius: 8px;
   border: none;
 }
+#nextbtn:disabled {
+  background-color: rgb(150, 153, 171);
+}
 #backbtn {
   background-color: transparent;
   color: var(--coolGray);
